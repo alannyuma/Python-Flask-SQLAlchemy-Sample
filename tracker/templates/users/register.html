@@ -1,0 +1,38 @@
+{% extends 'layouts/form.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+
+<div class="row">
+    <h3 class="form-heading"><a href="{{ url_for('pages.home') }}" title="Back to homepage"><i class="fa fa-home pull-right"></i></a></h3>
+</div>
+<div class="row">
+    <div class="col-md-4">
+      
+    </div>
+
+    <div class="col-md-4">
+        <form method="post" class="form">
+            <h3 class="form-heading">Register <a href="{{ url_for('pages.home') }}" title="To register"></a></h3>
+            {{ form.name(class_ = 'form-control first-input', placeholder = form.name.label.text, required = true, autofocus = true) }}
+
+            {{ form.email(class_ = 'form-control', placeholder = form.email.label.text, required = true) }}
+
+            {{ form.password(class_ = 'form-control', placeholder = form.password.label.text, required = true) }}
+
+            {{ form.confirm(class_ = 'form-control last-input', placeholder = form.confirm.label.text, required = true) }}
+
+            <p class="pull-left"><a href="{{ url_for('user_pages.login') }}">Login</a></p>
+            <input type="submit" value="Register" class="btn btn-primary btn-lg btn-block"  enabled>
+            <p>Register using other service <a href="http://www.realpython.com">yukiyuki tracker</a> </p>
+            </form>
+    </div>
+
+    <div class="col-md-4">
+        
+    </div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,10 @@
+<!-- extend base layout -->
+{% extends "layouts/main.html" %}
+
+{% block content %}
+  <h1>Search results for "{{ query }}":</h1>
+{% for entry in results %}
+      <!-- {% include 'post.html' %} -->
+      <li><h2>{{ entry.name_of_accused}}</h2></li>
+{% endfor %}
+{% endblock %}
